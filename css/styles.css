@@ -1,0 +1,162 @@
+/*
+===================================
+General
+===================================
+ */
+
+* {
+  box-sizing: border-box;
+}
+
+header {
+  width: 100%;
+  margin-bottom: 10px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 22px;
+  line-height: 1.5;
+  margin-top: 50px;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #f8f2ec;
+  background-image: url("https://mcdn.wallpapersafari.com/medium/63/25/PX8AOd.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+ul {
+  list-style-type: none;
+  padding-inline-start: 0;
+}
+
+.modal  {
+  margin: auto;
+  display: inline-block;
+  box-sizing: border-box;
+  background: #fff;
+  padding: 15px;
+  width: 100%;
+  max-width: 700px;
+}
+
+.modal-close {
+  float: right;
+  -webkit-appearance: none;
+  border: 0;
+  background: none;
+  color: #777;
+  text-decoration: underline;
+}
+
+.modal-img {
+  min-width: 40%;
+}
+
+.modal-title {
+  font-size: inherit;
+}
+
+#modal-container {
+  display: none;
+}
+
+#modal-container.is-visible {
+  position: fixed;
+  padding: 20px;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  overflow: auto;
+  display: grid;
+  text-align: center;
+}
+
+.logo {
+  margin-left: 20px;
+}
+
+.menu-btn {
+  width: 600px;
+  height: 50px;
+  color: black;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: inherit;
+  margin-left: inherit;
+}
+
+#name {
+  color: black;
+  background-color: lightgrey;
+  font-size: 22px;
+  border: 2px solid blue;
+  border-radius: 5px;
+}
+
+#height {
+  font-size: 22px;
+  text-align: center;
+  color: blue;
+}
+
+#image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  height: auto;
+}
+/*
+===================================
+ Responsive classes
+===================================
+ */
+
+@media all and (max-width: 768px) {
+
+  header {
+    width: 370px;
+    margin-bottom: 10px;
+    background-color: white;
+    border-radius: 5px;
+  }
+
+  body {
+    width: 370px;
+  }
+
+  .menu-btn {
+    width: 100%;
+  }
+
+  .modal  {
+    display: inline-block;
+    box-sizing: border-box;
+    background: #fff;
+    width: 100%;
+  }
+
+  #modal-container.is-visible {
+    position: fixed;
+    box-sizing: border-box;
+    padding: 20px;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    overflow: auto;
+    display: grid;
+    text-align: center;
+  }
+}
