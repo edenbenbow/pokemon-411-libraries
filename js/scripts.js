@@ -23,7 +23,7 @@ const pokemonRepository = (function () {
     function addListItem(pokemon) {
         let $listItem = $('<li></li>');
         $pokemonList.append($listItem);
-        let $button = $('<button class="menu-btn" data-toggle="modal">' + pokemon.name + '</button>');
+        let $button = $('<button type="button" class="btn-block btn-primary" data-toggle="modal" data-toggle="#exampleModal">' + pokemon.name + '</button>');
         $($listItem).append($button);
         $button.on('click', function () {
             showDetails(pokemon);
