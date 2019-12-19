@@ -23,7 +23,7 @@ const pokemonRepository = (function () {
     function addListItem(pokemon) {
         let $listItem = $('<li></li>');
         $pokemonList.append($listItem);
-        let $button = $('<button type="button" class="btn-block btn-primary" data-toggle="modal" data-toggle="#exampleModal">' + pokemon.name + '</button>');
+        let $button = $('<button type="button" class="btn-block btn-primary" data-target="modal" data-toggle="#exampleModal">' + pokemon.name + '</button>');
         $($listItem).append($button);
         $button.on('click', function () {
             showDetails(pokemon);
@@ -68,41 +68,14 @@ const pokemonRepository = (function () {
     }
 
     function showModal(item) {
-        //Clears everything out
-        $modalContainer.html('');
+        $('#exampleModalLabel').text(item.name);
+        $('#modalImage').attr('src', item.imageUrl);
+        $('#modalHeight').text('They are ' + item.height / 10 + ' meters tall!');
+        $('#modalType').text('Types: ' + item.types);
+        $('#exampleModal').modal({
+            keyboard: false
+        })
 
-        let $modal = $('<div></div>');
-        $modal.addClass('modal');
-
-        let $modalCloseButton = $('<button></button>');
-        $modalCloseButton.addClass('modal-close');
-        $modalCloseButton.text('Close');
-        $modalCloseButton.on('click', hideModal);
-
-        let $modalDetails = $('<p></p>');
-        $modalDetails.text('They are ' + item.height / 10 + ' meters tall!');
-        $modalDetails.addClass('modalSubDetails');
-
-        let $modalName = $('<h2></h2>');
-        $modalName.text(item.name);
-        $modalName.addClass('modal-title');
-
-        let $modalImg = $('<img>');
-        $modalImg.attr('src', item.imageUrl);
-        $modalImg.addClass('modal-img');
-
-        let $modalSubDetails = $('<p></p>');
-        $modalSubDetails.text('Types: ' + item.types);
-        $modalSubDetails.addClass('modalSubDetails');
-
-        $modal.append($modalCloseButton);
-        $modal.append($modalName);
-        $modal.append($modalImg);
-        $modal.append($modalDetails);
-        $modal.append($modalSubDetails);
-        $modalContainer.append($modal);
-
-        $modalContainer.addClass('is-visible');
     }
 
     function hideModal() {
